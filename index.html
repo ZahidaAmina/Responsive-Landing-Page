@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    keyframes: {
+                        fadeInUp: {
+                            '0%':   { opacity: '0', translate: '0 24px' },
+                            '100%': { opacity: '1', translate: '0 0' },
+                        },
+                    },
+                    animation: {
+                        'fade-in-up':     'fadeInUp 0.7s ease-out both',
+                        'fade-in-up-200': 'fadeInUp 0.7s ease-out 0.2s both',
+                        'fade-in-up-400': 'fadeInUp 0.7s ease-out 0.4s both',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation Bar -->
+    <nav class="group bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+            <a href="#home" class="text-2xl font-bold text-blue-800">My Courses</a>
+
+            <ul class="hidden md:flex gap-8 font-medium">
+                <li><a href="#home" class="transition-colors hover:text-blue-600">Home</a></li>
+                <li><a href="#courses" class="transition-colors hover:text-blue-600">Search Courses</a></li>
+                <li><a href="#about" class="transition-colors hover:text-blue-600">About</a></li>
+                <li><a href="#contact" class="transition-colors hover:text-blue-600">Contact</a></li>
+            </ul>
+
+            <div class="flex items-center gap-2">
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-md active:scale-95 transition">Get Started</button>
+                <!-- Mobile menu toggle-->
+                <label class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100 cursor-pointer has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-blue-600">
+                    <input type="checkbox" class="sr-only" aria-label="Toggle menu">
+                    <i class="fas fa-bars group-has-[:checked]:hidden" aria-hidden="true"></i>
+                    <i class="fas fa-times hidden group-has-[:checked]:inline" aria-hidden="true"></i>
+                </label>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <ul class="hidden group-has-[:checked]:block md:group-has-[:checked]:hidden border-t border-gray-100 px-6 py-2 font-medium">
+            <li><a href="#home" class="block py-3 transition-colors hover:text-blue-600">Home</a></li>
+            <li><a href="#courses" class="block py-3 transition-colors hover:text-blue-600">Search Courses</a></li>
+            <li><a href="#about" class="block py-3 transition-colors hover:text-blue-600">About</a></li>
+            <li><a href="#contact" class="block py-3 transition-colors hover:text-blue-600">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-blue-600 text-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center px-6 py-16 md:py-20">
+
+            <!-- Text -->
+            <div class="text-center md:text-left">
+                <h1 class="motion-safe:animate-fade-in-up text-4xl md:text-5xl font-bold mb-4 leading-tight">Welcome to New Courses</h1>
+                <p class="motion-safe:animate-fade-in-up-200 text-lg md:text-xl mb-8 text-blue-50">Practical online courses designed to help you learn valuable skills, build your portfolio, and become career-ready.</p>
+
+                <!-- Buttons -->
+                <div class="motion-safe:animate-fade-in-up-400 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <button class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold border-2 border-white hover:bg-gray-100 hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-white/50">Start Learning</button>
+                    <button class="bg-transparent text-white px-6 py-3 rounded-lg font-semibold border-2 border-white hover:bg-blue-700 hover:-translate-y-0.5 active:scale-95 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-white/50">Explore Courses</button>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="motion-safe:animate-fade-in-up-200 flex justify-center md:justify-end">
+                <img src="/Images/Hero%20image.jpg" alt="Hero Image" class="w-full max-w-md md:max-w-none aspect-[4/3] object-cover rounded-2xl shadow-lg transition duration-500 hover:scale-[1.02]">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="courses" class="py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-10">
+                <h2 data-anim="animate-fade-in-up" class="text-3xl md:text-4xl text-gray-700 font-bold mb-4 leading-tight">Explore Our Courses</h2>
+                <p data-anim="animate-fade-in-up-200" class="text-lg md:text-xl text-gray-500">Learn practical skills through structured courses created for beginners and aspiring professionals.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div data-anim="animate-fade-in-up" class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1.5 transition duration-300">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-800 text-center">Web Development</h3>
+                    <p class="text-gray-500 text-center">Learn the fundamentals of web development and build your first website.</p>
+                </div>
+                <div data-anim="animate-fade-in-up-200" class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1.5 transition duration-300">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-800 text-center">Graphic Design</h3>
+                    <p class="text-gray-500 text-center">Master the principles of graphic design and create stunning visuals.</p>
+                </div>
+                <div data-anim="animate-fade-in-up-400" class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg hover:-translate-y-1.5 transition duration-300">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-800 text-center">UI/UX Design</h3>
+                    <p class="text-gray-500 text-center">Learn the fundamentals of UI/UX design and create user-friendly interfaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-100 py-16">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 data-anim="animate-fade-in-up" class="text-3xl md:text-4xl text-gray-700 font-bold mb-4 leading-tight">About Us</h2>
+            <h3 data-anim="animate-fade-in-up-200" class="text-lg md:text-xl text-blue-600 font-medium">Learn Practical Skills. Build with Confidence.</h3>
+            <p data-anim="animate-fade-in-up-400" class="text-gray-500 mt-4">We provide practical, beginner-friendly courses in Web Development, Graphic Design, and UI/UX Design. Learn valuable skills, work on real projects, and build confidence for your career and freelancing journey.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-blue-200 py-16">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 data-anim="animate-fade-in-up" class="text-3xl md:text-4xl text-gray-700 font-bold mb-4 leading-tight">Contact Us</h2>
+            <h3 data-anim="animate-fade-in-up-200" class="text-lg md:text-xl text-blue-800 font-medium">Have a Question? We're Here to Help.</h3>
+            <p data-anim="animate-fade-in-up-400" class="text-lg text-gray-700 mt-4">Whether you have a question about our courses, enrollment, or learning process, feel free to reach out. We’d love to hear from you and help you get started.</p>
+
+            <div data-anim="animate-fade-in-up-400" class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10 mt-8">
+                <a href="mailto:info@mycourses.com" class="inline-flex items-center gap-3 text-blue-700 font-medium hover:underline">
+                    <i class="fas fa-envelope w-5 text-center text-blue-600" aria-hidden="true"></i>info@mycourses.com
+                </a>
+                <a href="tel:+921234567890" class="inline-flex items-center gap-3 text-blue-700 font-medium hover:underline">
+                    <i class="fas fa-phone-alt w-5 text-center text-blue-600" aria-hidden="true"></i>+92 123 4567890
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-600 text-white py-6">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p  class="text-sm">&copy; 2024 My Courses. All rights reserved.</p>
+            <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+                <li><a href="#" class="transition-colors hover:text-blue-300">Privacy Policy</a></li>
+                <li><a href="#" class="transition-colors hover:text-blue-300">Terms of Service</a></li>
+                <li><a href="#contact" class="transition-colors hover:text-blue-300">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Plays each [data-anim] ease-up when it scrolls into view -->
+    <script>
+        const items = document.querySelectorAll('[data-anim]');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!reduceMotion && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.remove('opacity-0');
+                    entry.target.classList.add(entry.target.dataset.anim);
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.15 });
+
+            items.forEach((el) => {
+                el.classList.add('opacity-0'); // hidden until it scrolls into view
+                observer.observe(el);
+            });
+        }
+    </script>
+</body>
+</html>
